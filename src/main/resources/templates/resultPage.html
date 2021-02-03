@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Result Page Sorted</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <section class="numbers">
+        <div>
+            <ul th:each="massive:${numbers.getIntegerListMap()}">
+                <li>
+                    <ul th:each="number:${massive.getValue()}" >
+                        <li><a  th:href="@{/arrayNumber/{quantity}(quantity = ${number})}" th:text="${number}">Value</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <div>
+        <form action="#" th:action="@{/sorted/{action}(action = ${action})}"    method="post">
+            <input readonly type="hidden" th:value="${numbers.integerListMap}" th:name="map" />
+            <input type="submit" value="Sorted"/>
+        </form>
+
+        <div>
+            <p><a th:href="@{/}" >Reset</a></p>
+        </div>>
+    </div>
+
+</body>
+</html>

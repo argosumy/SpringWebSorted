@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Page</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+    <body>
+    <section class="formMain">
+        <form action="#" th:action="@{/arrayNumber}"   method="post">
+            <table>
+                <tr>
+                    <td>How many numbers to display</td>
+                </tr>
+                <tr>
+                    <td><input id = "quantity" name="quantity" type="text"/></td>
+                </tr>
+                <tr>
+                    <td><input id="send" type="submit" value="Enter"></td>
+                </tr>
+            </table>
+        </form>
+    </section>
+    </body>
+</html>
