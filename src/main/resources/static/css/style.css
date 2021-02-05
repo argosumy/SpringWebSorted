@@ -1,17 +1,35 @@
 body {
-    margin: 0;
-    padding: 50px;
+    margin: 0 auto;
+    padding: 0;
+    width: 1230px;
 }
 
-.formMain{
-    margin:1px;
+header{
+    margin:0 auto;
+    width: 300px;
+}
+
+header div div{
+    padding: 25px;
+    text-align: center;
+    background: #3a3e4a;
+    font-size: 18px;
+    color:wheat;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
+.formMain {
+    margin-top: 150px;
+}
+
+.formMain > div{
+    margin:0 auto;
+    width: 200px;
 }
 
 .formMain form table {
-    position:absolute;
-    top:100px;
-    left:45%;
-    width:200px;
+    /*width:200px;*/
     background:#5F9EA0;
     padding:10px 10px;
 }
@@ -111,3 +129,7 @@ body > div{
 .btn:hover{
     background: #63b6bb;
 }
+
+
+
+

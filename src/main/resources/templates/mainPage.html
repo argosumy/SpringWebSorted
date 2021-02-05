@@ -6,20 +6,27 @@
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
     <body>
-    <section class="formMain">
-        <form action="#" th:action="@{/arrayNumber}"   method="post">
-            <table>
-                <tr>
-                    <td>How many numbers to display</td>
-                </tr>
-                <tr>
-                    <td><input id = "quantity" name="quantity" type="text"/></td>
-                </tr>
-                <tr>
-                    <td><input id="send" type="submit" value="Enter"></td>
-                </tr>
-            </table>
-        </form>
-    </section>
+        <header>
+            <div th:if="${error != null}">
+                <div th:text="${error}">ERROR Validation</div>
+            </div>
+        </header>
+        <section class="formMain">
+            <div>
+                <form action="#" th:action="@{/arrayNumber}"  th:object="${numbers}" method="post">
+                    <table>
+                        <tr>
+                            <td>How many numbers to display</td>
+                        </tr>
+                        <tr>
+                            <td><input id = "quantity" th:field="*{quantity}" type="number"/></td>
+                        </tr>
+                        <tr>
+                            <td><input id="send" type="submit" value="Enter"></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </section>
     </body>
 </html>
