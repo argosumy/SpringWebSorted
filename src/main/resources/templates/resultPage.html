@@ -6,6 +6,11 @@
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
+    <header th:if="${error != null}">
+        <div>
+            <div th:text="${error}">ERROR Validation</div>
+        </div>
+    </header>
     <section class="numbers">
         <div>
             <ul th:each="massive:${numbers.getIntegerListMap()}">
@@ -19,14 +24,12 @@
     </section>
     <div>
         <form action="#" th:action="@{/sorted/{action}(action = ${action})}"    method="post">
-            <input readonly type="hidden" th:value="${numbers.integerListMap}" th:name="map" />
-            <input type="submit" value="Sorted"/>
+            <input readonly type="hidden" th:value="${numbers.integerListMap}" th:name="map"/>
+            <input class="btn" type="submit" value="Sorted"/>
         </form>
-
         <div>
-            <p><a th:href="@{/}" >Reset</a></p>
-        </div>>
+            <p><a class="btn" th:href="@{/}" >Reset</a></p>
+        </div>
     </div>
-
 </body>
 </html>
